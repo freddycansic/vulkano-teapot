@@ -66,9 +66,18 @@ pub fn create_pipeline(
                             (
                                 1,
                                 DescriptorSetLayoutBinding {
-                                    stages: ShaderStages::FRAGMENT,
+                                    stages: ShaderStages::VERTEX,
                                     ..DescriptorSetLayoutBinding::descriptor_type(
                                         DescriptorType::UniformBuffer,
+                                    )
+                                },
+                            ),
+                            (
+                                2,
+                                DescriptorSetLayoutBinding {
+                                    stages: ShaderStages::FRAGMENT,
+                                    ..DescriptorSetLayoutBinding::descriptor_type(
+                                        DescriptorType::CombinedImageSampler,
                                     )
                                 },
                             ),
